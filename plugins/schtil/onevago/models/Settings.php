@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Artisan;
 use Model;
+use October\Rain\Support\Facades\Flash;
 
 /**
  * Settings Model
@@ -21,11 +22,11 @@ class Settings extends Model
     {
         $settings = json_decode($this->attributes["value"],1);
         if($settings["git_update"] == "1") {
-            exec("git pull");
+            exec("cd /var/www/mop.schtil.com && git pull origin master");
             $settings["git_update"] = "0";
         }
         if($settings["update_migration"] == "1") {
-            exec("php artisan october:up");
+            exec("cd /var/www/mop.schtil.com && php artisan october:up");
             $settings["update_migration"] = "0";
         };
         $this->attributes["value"] = json_encode($settings);
