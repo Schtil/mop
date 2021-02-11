@@ -1,0 +1,11 @@
+fields:
+    git_update:
+        label: 'Update Git'
+        span: left
+        type: switch
+        comment: 'send command ''git pull'''
+    update_migration:
+        label: 'Update Migrations'
+        span: left
+        type: switch
+        comment: 'send command ''php artisan migrate:up'''

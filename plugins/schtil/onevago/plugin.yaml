@@ -1,0 +1,6 @@
+plugin:
+  name: 'schtil.onevago::lang.plugin.name'
+  description: 'schtil.onevago::lang.plugin.description'
+  author: 'schtil.onevago::lang.plugin.author'
+  icon: oc-icon-book
+  homepage: ''
