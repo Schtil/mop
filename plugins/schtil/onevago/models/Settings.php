@@ -30,7 +30,7 @@ class Settings extends Model
             $settings["update_migration"] = "0";
         };
         $this->attributes["value"] = json_encode($settings);
-        Flash::error("TEST");
+        Flash::error("TEST1");
     }
 
 }
