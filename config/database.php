@@ -59,7 +59,7 @@ return [
             'port' => env('DB_PORT', 3306),
             'database' => env('DB_DATABASE', 'october'),
             'username' => env('DB_USERNAME', ''),
-            'password' => env('DB_PASSWORD', ''),jhpjdf',
+            'password' => env('DB_PASSWORD', ''),
             'charset'    => 'utf8mb4',
             'collation'  => 'utf8mb4_unicode_ci',
             'prefix'     => '',
