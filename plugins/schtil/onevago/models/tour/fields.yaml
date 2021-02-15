@@ -1,0 +1,62 @@
+fields:
+    id:
+        label: ID
+        disabled: true
+        type: text
+    creator:
+        label: 'schtil.onevago::lang.field.creator_id'
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    type_id:
+        label: 'schtil.onevago::lang.field.type_id'
+        span: left
+        required: 1
+        type: number
+    address:
+        label: 'schtil.onevago::lang.field.address'
+        span: auto
+        trigger:
+            action: show
+            field: type_id
+            condition: 'value[1]'
+        type: text
+    name:
+        label: 'schtil.onevago::lang.field.name'
+        span: left
+        required: 1
+        type: text
+    description:
+        label: 'schtil.onevago::lang.field.description'
+        size: large
+        span: right
+        required: 1
+        type: textarea
+    location_id:
+        label: 'schtil.onevago::lang.field.location_id'
+        span: left
+        required: 1
+        type: number
+    start_date:
+        label: 'schtil.onevago::lang.field.start_date'
+        mode: date
+        minDate: '2020-01-01'
+        maxDate: '2030-01-01'
+        span: left
+        required: 1
+        type: datepicker
+    end_date:
+        label: 'schtil.onevago::lang.field.end_date'
+        mode: date
+        minDate: '2020-01-01'
+        maxDate: '2030-01-01'
+        span: left
+        required: 1
+        type: datepicker
+    cost:
+        label: 'schtil.onevago::lang.field.cost'
+        span: left
+        required: 1
+        type: number

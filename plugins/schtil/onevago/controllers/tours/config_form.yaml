@@ -1,0 +1,29 @@
+# Record name
+name: 'schtil.onevago::lang.tour.name'
+
+# Model Form Field configuration
+form: $/schtil/onevago/models/tour/fields.yaml
+
+# Model Class name
+modelClass: Schtil\Onevago\Models\Tour
+
+# Default redirect location
+defaultRedirect: schtil/onevago/tours
+
+# Create page
+create:
+    title: 'backend::lang.form.create_title'
+    redirect: schtil/onevago/tours/update/:id
+    redirectClose: schtil/onevago/tours
+    flashSave: 'lovata.toolbox::lang.message.create_success'
+
+# Update page
+update:
+    title: 'backend::lang.form.update_title'
+    redirect: schtil/onevago/tours
+    redirectClose: schtil/onevago/tours
+    flashSave: 'lovata.toolbox::lang.message.update_success'
+    flashDelete: 'lovata.toolbox::lang.message.delete_success'
+
+# Preview page
+preview: {  }

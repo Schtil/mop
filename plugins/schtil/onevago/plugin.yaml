@@ -1,6 +1,28 @@
 plugin:
-  name: 'schtil.onevago::lang.plugin.name'
-  description: 'schtil.onevago::lang.plugin.description'
-  author: 'schtil.onevago::lang.plugin.author'
-  icon: oc-icon-book
-  homepage: ''
+    name: 'schtil.onevago::lang.plugin.name'
+    description: 'schtil.onevago::lang.plugin.description'
+    author: 'schtil.onevago::lang.plugin.author'
+    icon: oc-icon-book
+    homepage: ''
+navigation:
+    onevago-menu-main:
+        label: 'schtil.onevago::lang.menu.main'
+        url: schtil/onevago/tours
+        icon: icon-paw
+        permissions:
+            - 'onevago-menu-*'
+        sideMenu:
+            onevago-menu-tours:
+                label: 'schtil.onevago::lang.menu.tours'
+                url: schtil/onevago/tours
+                permissions:
+                    - onevago-menu-tours
+                icon: icon-paw
+    main-menu-item:
+        label: 'Menu Item'
+        icon: icon-life-ring
+        url: /
+permissions:
+    onevago-menu-tours:
+        label: 'schtil.onevago::lang.permission.tour'
+        tab: 'schtil.onevago::lang.tab.permissions'

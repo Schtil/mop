@@ -82,15 +82,23 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
             'onevago' => [
-                'label'       => 'Onevago',
-                'url'         => Backend::url('schtil/onevago/mycontroller'),
+                'label'       => 'schtil.onevago::lang.plugin.name',
+                'url'         => Backend::url('schtil/onevago/tours'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['schtil.onevago.*'],
                 'order'       => 500,
+
+                'sideMenu' => [
+                    'tours' => [
+                        'label'       => 'schtil.onevago::lang.menu.tours',
+                        'icon'        => 'icon-hdd-o',
+                        'url'         => Backend::url('schtil/onevago/tours'),
+                        'permissions' => ['schtil.onevago.*'],
+                        'order'       => 500,
+                    ],
+                ],
             ],
         ];
     }
