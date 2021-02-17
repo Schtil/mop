@@ -1,8 +1,35 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     id:
         label: ID
+        type: number
         searchable: true
+    creator_id:
+        label: creator_id
+        type: text
+    name:
+        label: name
+        type: text
+    address:
+        label: address
+        type: text
+    cost:
+        label: cost
+        type: number
+    type_id:
+        label: type_id
+        type: text
+    location_id:
+        label: location_id
+        type: text
+    start_date:
+        label: start_date
+        type: text
+    end_date:
+        label: end_date
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

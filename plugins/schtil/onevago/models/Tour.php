@@ -32,7 +32,9 @@ class Tour extends Model
         'end_date',
         'created_at',
         'updated_at',
+        'details',
     ];
+
 
     /**
      * @var array Validation rules for attributes
@@ -84,6 +86,10 @@ class Tour extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
+    public $attachOne = [
+        'photo' => 'System\Models\File',
+    ];
+    public $attachMany = [
+        "photos" => 'System\Models\File',
+    ];
 }

@@ -1,0 +1,30 @@
+title = "Search"
+url = "/search"
+layout = "default"
+is_hidden = 0
+
+[TourList]
+
+[session]
+security = "all"
+==
+<div class="container">
+
+<h2>Список туров по запросу</h2>
+{% set tours = TourList.make() %}
+<!-- form -->
+<div class="row">
+{% for tour in tours %}
+<div class="col-sm-6 wowload fadeInUp"><div class="rooms"><img src="{{ tour.photo.path }}" class="img-responsive">
+<div class="info">
+<h3>{{tour.name}}</h3>
+<a href="{{ 'tour/' }}{{ tour.id }}" class="btn btn-default">Check Details</a></div></div></div>
+{% endfor %}
+</div>
+
+                     <div class="text-center">
+                     {{ tours.render|raw }}
+                     </div>
+
+
+</div>{% component 'TourList' %}

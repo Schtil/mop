@@ -1,34 +1,77 @@
-title = "Rooms Details"
-url = "/rooms-details"
+title = "Тур"
+url = "/tour/:tour_id"
 layout = "default"
-description = "Rooms details"
+description = "Страница тура"
+is_hidden = 0
+
+[TourList]
 ==
-<div class="container">
+<div class="container">{% component 'TourList' %}
 
-<h1 class="title">Luxurious Suites</h1>
+    {% set data = TourList.find(this.param.tour_id) %}
+    {% if data["status"] == 'error' %}
+    <script>
+        window.location.href = "{{data["
+        url
+        "]}}";
+    </script>
+    {% endif %}
+    
+    {% set tour = data["data"] %}
+    <h1 class="title">{{tour.name}}, {{tour.location}}</h1>
+    
 
- <!-- RoomDetails -->
-            <div id="RoomDetails" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                <div class="item active"><img src="{{ 'assets/images/photos/8.jpg'|theme }}" class="img-responsive" alt="slide"></div>
-                <div class="item  height-full"><img src="{{ 'assets/images/photos/9.jpg'|theme }}"  class="img-responsive" alt="slide"></div>
-                <div class="item  height-full"><img src="{{ 'assets/images/photos/10.jpg'|theme }}"  class="img-responsive" alt="slide"></div>
-                </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#RoomDetails" role="button" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                <a class="right carousel-control" href="#RoomDetails" role="button" data-slide="next"><i class="fa fa-angle-right"></i></a>
-            </div>
-  <!-- RoomCarousel-->
-
-<div class="room-features spacer">
-    <div class="row">
-      <div class="col-sm-12 col-md-5">
-          {% content 'room/desc.htm' %}
-      </div>
-      <div class="col-sm-6 col-md-3 amenitites">
-          {% content 'room/features.htm' %}
-      </div>
-        {% content 'room/prices.htm' %}
+    <!-- RoomDetails -->
+    <div id="RoomDetails" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active"><img src="{{ tour.photo.path }}" class="img-responsive"
+                                          alt="slide"></div>
+            {% for photo in tour.photos %}
+            <div class="item  height-full"><img src="{{ photo.path }}" class="img-responsive"
+                                                alt="slide"></div>
+            {% endfor %}
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#RoomDetails" role="button" data-slide="prev"><i
+                class="fa fa-angle-left"></i></a>
+        <a class="right carousel-control" href="#RoomDetails" role="button" data-slide="next"><i
+                class="fa fa-angle-right"></i></a>
     </div>
-</div>
+    <!-- RoomCarousel-->
+
+    <div class="room-features spacer">
+        <div class="row">
+            <div class="col-sm-12 col-md-5">
+                {{ tour.description|raw}}
+                <br>
+                <b> Адрес: </b>{{tour.address }}
+                <br><br>
+                <b> Контакты: </b>{{tour.contact }}
+            </div>
+            <div class="col-sm-6 col-md-3 amenitites">
+                <h3>Преимущества</h3>
+                <ul>
+                {% for item in tour.details %}
+                  <li>{{item.text}}</li>
+                  {% endfor %}
+                </ul>
+            </div>
+                <div class="col-sm-3 col-md-2">
+                  <div class="size-price">Цена<span>$ {{ tour.cost }}</span></div>
+                   <div class="test" style="text-align: center; margin-top:40px;">
+                    <button class="btn open-modal" style="">Buy</button></div>
+                </div>
+                <div class="col-sm-3 col-md-2">
+                  <div class="size-price">Даты<span style="font-size:1.5em; display:block; text-aling:center;">с {{ tour.start_date|date("d.m.Y") }}<br>по {{ tour.end_date|date("d.m.Y") }}</span></div>
+                </div>
+            <div class="modal-overlay"></div>
+            <div class="modal-wrapper">
+                <div class="modal js-blur">
+                    <button class="close-modal">×</button>
+                    <h2>Покупка</h2>
+                    <p>Для оформления свяжитесь с продавцом</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

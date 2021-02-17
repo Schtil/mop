@@ -17,4 +17,10 @@
         'name' => 'tour',
         'list_title' => 'Tour list',
     ],
+    'component' => [
+        'tour_list_name' => 'Tour List',
+        'tour_list_description' => 'Get tour list',
+        'tour_page_name' => 'Tour Page',
+        'tour_page_description' => 'Get tour page data',
+    ],
 ];

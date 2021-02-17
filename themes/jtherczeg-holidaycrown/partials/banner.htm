@@ -2,9 +2,38 @@
     <div class="welcome-message">
         <div class="wrap-info">
             <div class="information">
-                <h1  class="animated fadeInDown">Best Hotel in Dubai</h1>
-                <p class="animated fadeInUp">Most luxurious hotel of Asia with the royal treatments and excellent customer service.</p>                
+                <h1  class="animated fadeInDown">Лучшие отели мира</h1>
+                <form style="    margin-top: 50px;" action="/search" itemprop="potentialAction" itemscope="itemscope" itemtype="http://schema.org/SearchAction" class="dealform js-dealform dealform--no-detail" data-qa="dealform">
+                    <div class="dealform__flex-wrapper">
+                        <div class="dealform__query-wrapper" ref="">
+                            <label class="visuallyhidden" for="querytext">Поиск</label>
+                            <div>
+               <span class="icon-ic searchquery-icon icon-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" viewBox="0 0 24 24">
+                   <g fill="none" class="svg-color--primary" stroke="#37454D" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"><path d="M21 21l-6-6"></path>
+                   <circle cx="10" cy="10" r="7"></circle></g></svg>
+               </span>
+                                <input type="search" role="combobox" aria-expanded="false" aria-autocomplete="both" aria-owns="ssg-suggestions" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Введите пункт назначения" name="sQuery" class="js-query input querytext querytext--padding-right" id="querytext" itemprop="query">
+
+                            </div>
+                        </div>
+                        <div class="calendar-button-wrapper calendar-button-wrapper--checkin">
+                            <input type="search" id="start_date" role="combobox" aria-expanded="false" aria-autocomplete="both" aria-owns="ssg-suggestions" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Заезд" name="startDate" class="js-query input querytext querytext--padding-right" id="querytext" itemprop="query">
+                        </div>
+                        <div class="calendar-button-wrapper calendar-button-wrapper--checkout">
+                            <input type="search" id="end_date" role="combobox" aria-expanded="false" aria-autocomplete="both" aria-owns="ssg-suggestions" autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Отъезд" name="endDate" class="js-query input querytext querytext--padding-right" id="querytext" itemprop="query">
+                        </div>
+                        <button class="btn btn--primary btn--regular search-button js-search-button" data-qa="search-button">
+        <span class="icon-ic search-button__icon icon-center icon-contain">
+        <svg xmlns="http://www.w3.org/2000/svg" focusable="false" tabindex="-1" width="24" height="24" viewBox="0 0 24 24">
+        <g fill="none" class="svg-color--primary" stroke="#37454D" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10">
+        <path d="M21 21l-6-6"></path><circle cx="10" cy="10" r="7"></circle></g></svg>
+        </span>
+                            <span class="search-button__label" style="color:black;vertical-align: super;">Поиск</span>
+                        </button>
+                    </div>
+                </form>
             </div>
-            <a href="#information" class="arrow-nav scroll wowload fadeInDownBig"><i class="fa fa-angle-down"></i></a>
+            <a href="#services" class="arrow-nav scroll wowload fadeInDownBig"><i class="fa fa-angle-down"></i></a>
         </div>
     </div>

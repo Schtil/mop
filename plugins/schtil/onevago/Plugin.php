@@ -51,10 +51,8 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Schtil\Onevago\Components\MyComponent' => 'myComponent',
+            'Schtil\Onevago\Components\TourList' => 'TourList',
         ];
     }
 

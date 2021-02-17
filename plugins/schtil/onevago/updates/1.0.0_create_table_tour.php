@@ -17,9 +17,11 @@ class CreateTableTour extends Migration
             $table->integer('cost');
             $table->mediumText('description');
             $table->bigInteger('type_id');
-            $table->bigInteger('location_id');
+            $table->string('location');
+            $table->string('contact');
             $table->date('start_date');
             $table->date('end_date');
+            $table->json("details")->nullable();
             $table->timestamps();
         });
     }

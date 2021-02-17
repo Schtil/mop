@@ -28,17 +28,11 @@ fields:
         span: left
         required: 1
         type: text
-    description:
-        label: 'schtil.onevago::lang.field.description'
-        size: large
-        span: right
+    location:
+        label: Location
+        span: auto
         required: 1
-        type: textarea
-    location_id:
-        label: 'schtil.onevago::lang.field.location_id'
-        span: left
-        required: 1
-        type: number
+        type: text
     start_date:
         label: 'schtil.onevago::lang.field.start_date'
         mode: date
@@ -47,6 +41,11 @@ fields:
         span: left
         required: 1
         type: datepicker
+    contact:
+        label: Контакты
+        span: auto
+        required: 1
+        type: text
     end_date:
         label: 'schtil.onevago::lang.field.end_date'
         mode: date
@@ -60,3 +59,47 @@ fields:
         span: left
         required: 1
         type: number
+    description:
+        label: 'schtil.onevago::lang.field.description'
+        size: large
+        span: left
+        required: 1
+        type: richeditor
+    details:
+        label: Преимущества
+        prompt: 'Добавить пункт'
+        span: right
+        type: repeater
+        form:
+            fields:
+                text:
+                    label: Пункт
+                    span: auto
+                    type: text
+tabs:
+    fields:
+        photo:
+            label: 'Main Photo'
+            mode: image
+            imageWidth: '400'
+            imageHeight: '100'
+            useCaption: 0
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            required: 1
+            type: fileupload
+            tab: photo
+        photos:
+            label: Photos
+            mode: image
+            imageWidth: '1920'
+            imageHeight: '1080'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: photos
