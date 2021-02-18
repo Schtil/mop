@@ -3,10 +3,10 @@ description: '🛍️ Tour buying service.'
 author: Schtil
 homepage: ''
 code: onevago
-authorUrl: 'http://thebootstrapthemes.com/'
+authorUrl: 'http://schtil.com/'
 form:
     fields:
         site_name:
             label: 'Site name'
-            comment: 'The website name as it should appear on the front-end'
-            default: 'Holiday Crown'
+            comment: '🛍️ Tour buying service.'
+            default: 'Onevago'
